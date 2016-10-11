@@ -25,7 +25,8 @@ void AProceduralFloor::Tick( float DeltaTime )
 
 void AProceduralFloor::LoadLevelFileIntoArray() {
 	FString Result;	
-	LevelFilePath = FPaths::GameDir()+"Content/"+ LevelFilePath;	
+	LevelFilePath = FPaths::GameDir()+"Content/"+ LevelFilePath;
+	UE_LOG(LogTemp, Warning, TEXT("File path is %s "), *LevelFilePath);
 	FFileHelper::LoadFileToString(Result, *LevelFilePath, 0);	
 	if (!Result.IsEmpty()) {
 		for (int index = 0; index < Result.Len(); index++) {
@@ -34,7 +35,7 @@ void AProceduralFloor::LoadLevelFileIntoArray() {
 			}
 			else {
 				if (Result[index] != 13) {
-					//UE_LOG(LogClass, Log, TEXT("Result value values are %d "), Result[index]);
+					UE_LOG(LogTemp, Warning, TEXT("Result value values are %d "), Result[index]);
 					FloorMap.Add(Result[index] - '0');
 				}
 			}
@@ -42,7 +43,7 @@ void AProceduralFloor::LoadLevelFileIntoArray() {
 	}
 	MaxX++;
 	MaxY = FloorMap.Num() / MaxX;
-	//UE_LOG(LogClass, Log, TEXT("MaxX and MaxY values are %d %d "),MaxX,MaxY);
+	UE_LOG(LogTemp, Warning, TEXT("MaxX and MaxY values are %d %d "),MaxX,MaxY);
 }
 
 TArray<int> AProceduralFloor::GetFloorMap() {
