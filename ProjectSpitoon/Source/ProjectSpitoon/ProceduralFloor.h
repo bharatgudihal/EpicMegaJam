@@ -23,17 +23,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Level")
 	TArray<int> GetFloorMap();
 
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Level", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = "Level", meta = (AllowPrivateAccess = "true"))
 	int MaxX;
 
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Level", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = "Level", meta = (AllowPrivateAccess = "true"))
 	int MaxY;
 
 private:
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Level", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = "Level", meta = (AllowPrivateAccess = "true"))
 	TArray<int> FloorMap;
 
-	UPROPERTY(EditAnywhere, BluePrintReadOnly, Category = "Level", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Level", meta = (AllowPrivateAccess = "true", ExposeOnSpawn = "true"))
 	FString LevelFilePath;	
 
 	void LoadLevelFileIntoArray();
