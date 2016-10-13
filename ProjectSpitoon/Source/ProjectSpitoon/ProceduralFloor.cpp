@@ -49,3 +49,7 @@ void AProceduralFloor::LoadLevelFileIntoArray() {
 TArray<int> AProceduralFloor::GetFloorMap() {
 	return FloorMap;
 }
+
+void AProceduralFloor::DestroyLevel() {
+	Destroy();
+}

@@ -23,6 +23,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Level")
 	TArray<int> GetFloorMap();
 
+	UFUNCTION(BlueprintCallable, Category = "Level")
+	void DestroyLevel();
+
 	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = "Level", meta = (AllowPrivateAccess = "true"))
 	int MaxX;
 
